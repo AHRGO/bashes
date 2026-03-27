@@ -16,13 +16,13 @@ prints_text_in_green() {
 prints_starting_message() {
     printf "\n"
     prints_text_in_cyan "Starting $1..."
-    printf "\n\n"
+    printf "\n\n\n"
 }
 
 prints_successful_message() {
     printf "\n"
     prints_text_in_green "$1 has successfully run!"
-    printf "\n\n"
+    printf "\n\n\n"
 }
 
 calls_flutter_clean() {

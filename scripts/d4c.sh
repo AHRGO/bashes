@@ -88,5 +88,17 @@ lovetrain() {
   dirty_deeds_done_dirt_cheap "$1" "$target_branch"
 }
 
+# Branch update pipeline
+tnt() {
+  local current_branch=$(git branch --show-current)
+  local target_branch_1="first_branch" # the branch that will be merged in the current branch in the end
+  local target_branch_2="second_branch" # the branch that will be merge in first branch before first branch be merged in current branch
+  # if needed, keep doing it :)
+
+  merge_into $target_branch_1 $target_branch_2
+  git checkout $current_branch
+  merge_source_into_current $target_branch_1
+}
+
 # run d4c() by default
 d4c
